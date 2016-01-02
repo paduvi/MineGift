@@ -11,7 +11,8 @@ public class SubClazz {
 	private int finishShift;
 	private String place;
 	private String teacher;
-	
+	private int nSlot;
+
 	public String getName() {
 		return name;
 	}
@@ -27,7 +28,7 @@ public class SubClazz {
 	public void setDay(int day) {
 		this.day = day;
 	}
-	
+
 	public int getStartShift() {
 		return startShift;
 	}
@@ -74,5 +75,24 @@ public class SubClazz {
 
 	public void setTeacher(String teacher) {
 		this.teacher = teacher;
+	}
+
+	public boolean conflict(SubClazz other) {
+		if (other.getToDate().before(this.getFromDate()) || other.getFromDate().after(this.getToDate()))
+			return false;
+		if (other.getDay() != this.getDay())
+			return false;
+		if (other.getFinishShift() < this.getStartShift() || other.getStartShift() > this.getFinishShift())
+			return false;
+		System.out.println("Conflict: " + name + " vs " + other.getName());
+		return true;
+	}
+
+	public int getNSlot() {
+		return nSlot;
+	}
+
+	public void setNSlot(int nSlot) {
+		this.nSlot = nSlot;
 	}
 }

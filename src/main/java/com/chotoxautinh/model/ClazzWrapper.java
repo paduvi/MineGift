@@ -11,7 +11,7 @@ public class ClazzWrapper {
 	public ClazzWrapper() {
 		subClazzes = new ArrayList<>();
 	}
-	
+
 	public Subject getSubject() {
 		return subject;
 	}
@@ -38,5 +38,25 @@ public class ClazzWrapper {
 
 	public void add(SubClazz subClazz) {
 		this.subClazzes.add(subClazz);
+	}
+
+	public boolean conflict(ClazzWrapper other) {
+		for (SubClazz subClazz : subClazzes) {
+			for (SubClazz clazz : other.getSubClazzes()) {
+				if (subClazz.conflict(clazz))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean isFull() {
+		for (SubClazz subClazz : subClazzes) {
+			if (subClazz.getNSlot() <= 0){
+				System.out.println(subClazz.getName() + " đã hết slot");
+				return true;
+			}
+		}
+		return false;
 	}
 }

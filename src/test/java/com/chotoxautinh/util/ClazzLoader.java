@@ -18,7 +18,7 @@ import com.chotoxautinh.model.Subject;
 
 public class ClazzLoader {
 
-	public static Map<Subject, List<ClazzWrapper>> loadClazzFromResource(File file) {
+	public static Map<Subject, List<ClazzWrapper>> loadClazzFromPlain(File file) {
 		Map<Subject, List<ClazzWrapper>> map = new HashMap<>();
 
 		InputStreamReader isr = null;
@@ -26,24 +26,28 @@ public class ClazzLoader {
 		try {
 			isr = new InputStreamReader(new FileInputStream(file));
 			reader = new BufferedReader(isr);
-			
+
 			String temp;
-			while((temp = reader.readLine()) != null){
+			while ((temp = reader.readLine()) != null) {
 				String[] portion = temp.trim().split("\t");
 				Subject subject = new Subject(portion[0], portion[1]);
 				ClazzWrapper wrapper = new ClazzWrapper();
 				wrapper.setSubject(subject);
 				wrapper.setnCredit(Integer.parseInt(portion[2]));
-				
-				SubClazz clazz = new SubClazz();
-				clazz.setName(portion[3]);
-				ClazzUtil.dateHandle(clazz, portion[4]);
-				clazz.setDay(Integer.parseInt(portion[5]));
-				ClazzUtil.periodHandle(clazz, portion[6]);
-				clazz.setPlace(portion[7]);
-				
-				wrapper.add(clazz);
-				
+
+				do {
+					portion = temp.trim().split("\t");
+					SubClazz clazz = new SubClazz();
+					clazz.setName(portion[3]);
+					ClazzUtil.dateHandle(clazz, portion[4]);
+					clazz.setDay(Integer.parseInt(portion[5]));
+					ClazzUtil.periodHandle(clazz, portion[6]);
+					clazz.setPlace(portion[7]);
+					clazz.setNSlot(Integer.parseInt(portion[9]));
+
+					wrapper.add(clazz);
+				} while (!(temp = reader.readLine()).contains("======="));
+
 				addToMap(map, subject, wrapper);
 			}
 		} catch (FileNotFoundException e) {
@@ -65,9 +69,9 @@ public class ClazzLoader {
 
 		return map;
 	}
-	
-	private static void addToMap(Map<Subject, List<ClazzWrapper>> map, Subject subject, ClazzWrapper wrapper){
-		if(map.containsKey(subject)){
+
+	private static void addToMap(Map<Subject, List<ClazzWrapper>> map, Subject subject, ClazzWrapper wrapper) {
+		if (map.containsKey(subject)) {
 			map.get(subject).add(wrapper);
 		} else {
 			List<ClazzWrapper> list = new ArrayList<>();

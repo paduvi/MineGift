@@ -1,8 +1,8 @@
 ﻿LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N01)	15/02/16-20/05/16	2	6-10	Nhà B9-201	 	1	
-LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N01.TH01)	15/02/16-20/05/16	2	6-10	Nhà B9-201	 	0	
+LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N01.TH02)	15/02/16-20/05/16	2	11-15	Nhà B1-304	 	4	
 =============================================
 LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N01)	15/02/16-20/05/16	2	6-10	Nhà B9-201	 	1	
-LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N01.TH02)	15/02/16-20/05/16	2	11-15	Nhà B1-304	 	4	
+LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N01.TH01)	15/02/16-20/05/16	2	6-10	Nhà B9-201	 	1	
 =============================================
 LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N02)	15/02/16-20/05/16	2	6-10	Nhà B9-301	 	0	
 LS01001	Đường lối cách mạng của Đảng cộng sản Việt Nam	3	LS01001_K35 (N02.TH02)	15/02/16-20/05/16	2	6-10	Nhà B9-301	 	0

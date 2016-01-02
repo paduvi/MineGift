@@ -19,4 +19,5 @@ public class ClazzUtil {
 		clazz.setStartShift(Integer.parseInt(range.split("-")[0]));
 		clazz.setFinishShift(Integer.parseInt(range.split("-")[1]));
 	}
+	
 }
