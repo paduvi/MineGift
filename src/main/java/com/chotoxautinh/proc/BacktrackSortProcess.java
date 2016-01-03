@@ -11,9 +11,13 @@ import com.chotoxautinh.model.Subject;
 
 public class BacktrackSortProcess {
 
-	private List<ClazzWrapper> resultList = new ArrayList<>();
+	private List<ClazzWrapper> resultList;
 
 	public boolean proc(Map<Subject, List<ClazzWrapper>> map) {
+		if(resultList == null)
+			resultList = new ArrayList<>();
+		else
+			resultList.clear();
 		Iterator<Map.Entry<Subject, List<ClazzWrapper>>> iterator = map.entrySet().iterator();
 		if (iterator.hasNext())
 			return process(iterator);
